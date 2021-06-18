@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org" class="h-100">
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <!--  Fancy Font for Header -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Hotel Search</title>
+</head>
+<body class="d-flex flex-column h-100">
+  <header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <span class="fs-4 logo-font p-3">Hotels 6</span>
+      <div class="col-md-10 text-end">
+        <a href="/cancel">Cancel Booking</a>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+  <h2 class="text-center">Search for a Hotel</h2>
+  <form action="#" th:action="@{/hotelsearch}" th:object="${hotel}" method="post" class="text-center">
+   <label for="cities">Choose a city:</label>
+   <select th:field="*{city}" name="cities" id="cities">
+     <option th:value="'New York'">New York</option>
+     <option th:value="'Los Angeles'">Los Angeles</option>
+     <option th:value="'Chicago'">Chicago</option>
+     <option th:value="'Houston'">Houston</option>
+     <option th:value="'Phoenix'">Phoenix</option>
+     <option th:value="'Philadelphia'">Philadelphia</option>
+     <option th:value="'San Antonio'">San Antonio</option>
+     <option th:value="'San Diego'">San Diego</option>
+     <option th:value="'Dallas'">Dallas</option>
+     <option th:value="'San Jose'">San Jose</option>
+</select>
+   <input type="submit" value="Submit" />
+   </form>
+   </main>
+   <footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <p class="text-center">&copy 2021 Erica Hicks and Katie Vickstrom <br/>
+Disclaimer: This website is for CSUMB CST 438 class project. Do not enter any real personal information. 
+    </p>
+  </div>
+</footer>
+</body>
+</html> 
